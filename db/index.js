@@ -4,11 +4,11 @@ import { config } from 'dotenv';
 config();
 
 const pool = createPool({
-    port: 3306,
-    password: 'Shubham@123',
-    host: 'localhost',
-    database: 'ecom',
-    user: 'root'
+    port: process.env.MYSQL_PORT,
+    password: process.env.MYSQL_PASSWORD,
+    host: process.env.MYSQL_HOST,
+    database: process.env.MYSQL_DATABASE_NAME,
+    user: process.env.MYSQL_USER
 });
 
 const connectToDatabase = async () => {
